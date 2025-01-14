@@ -11,23 +11,76 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="/css/styles.css" rel="stylesheet" />
     <title>Frontend Mentor | Interactive rating component</title>
+
+    <script src="./js/index.js" defer></script>
   </head>
   <body>
-    <!-- Rating state start -->
+    <main class="container" id="rating-card">
+      <div class="star-container">
+        <img
+          src="./images/icon-star.svg"
+          class="star-svg-icon"
+          alt="star icon"
+        />
+      </div>
 
-    How did we do? Please let us know how we did with your support request. All
-    feedback is appreciated to help us improve our offering! 1 2 3 4 5 Submit
+      <div class="content">
+        <h1 class="title">How did we do?</h1>
 
-    <!-- Rating state end -->
+        <p class="description">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
 
-    <!-- Thank you state start -->
+        <ul class="rating-numbers-list">
+          <li class="rating-number">1</li>
+          <li class="rating-number">2</li>
+          <li class="rating-number">3</li>
+          <li class="rating-number">4</li>
+          <li class="rating-number">5</li>
+        </ul>
 
-    You selected
-    <!-- Add rating here -->
-    out of 5 Thank you! We appreciate you taking the time to give a rating. If
-    you ever need more support, don’t hesitate to get in touch!
+        <button type="submit" class="submit-button" id="submit-button">
+          Submit
+        </button>
+      </div>
 
-    <!-- Thank you state end -->
+      <div class="overlay"></div>
+    </main>
+
+    <main class="container thanks-card hidden" id="thanks-card">
+      <div class="atm-img-container">
+        <img
+          src="./images/illustration-thank-you.svg"
+          alt="ATM Icon"
+          class="atm-img"
+        />
+
+        <p>
+          <span id="rating-value">You selected 4</span>
+
+          <span>out of 5</span>
+        </p>
+      </div>
+
+      <div>
+        <p>Thank you!</p>
+
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+      </div>
+      <div class="overlay"></div>
+    </main>
   </body>
 </html>
