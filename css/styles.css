@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-primary-orange: hsl(25, 97%, 53%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-neutral-light-grey: hsl(217, 12%, 63%);
+  --color-neutral-dark-blue: hsl(213, 19%, 18%);
+  --color-neutral-very-dark-blue: hsl(216, 12%, 8%);
+
+  --font-family: "Overpass", sans-serif;
+  --font-weight-regular: 300;
+  --font-weight-bold: 700;
+  --font-size-paragraph: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+img,
+p {
+  z-index: 20;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-paragraph);
+  color: var(--color-neutral-white);
+  background-color: var(--color-neutral-very-dark-blue);
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  margin: 0 3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  background-color: var(--color-neutral-dark-blue);
+  box-shadow: 0.1rem 0.2rem 2rem rgba(0, 0, 0, 0.5);
+  border-radius: 2.4rem;
+  padding: 3rem;
+  margin: 0 auto;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    var(--color-neutral-dark-blue),
+    var(--color-neutral-very-dark-blue)
+  );
+  opacity: 40%;
+  border-radius: 2.4rem;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.star-container,
+.content,
+atm-img-container,
+atm-img-container + div {
+  z-index: 20;
+}
+
+.star-container {
+  background-color: hsla(217, 12%, 63%, 0.1);
+  width: fit-content;
+  border-radius: 50%;
+  padding: 1.5rem 1.8rem;
+}
+
+.star-svg-icon {
+  width: 1.8rem;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-weight: 300;
+}
+
+.title {
+  font-size: 2.6rem;
+  font-weight: 500;
+}
+
+.description {
+  color: var(--color-neutral-light-grey);
+  line-height: 1.6;
+}
+
+.rating-numbers-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.rating-number {
+  background-color: hsla(217, 12%, 63%, 0.1);
+  padding: 1.5rem 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-light-grey);
+  margin-bottom: 1rem;
+}
+
+.rating-number:hover {
+  background-color: var(--color-primary-orange);
+  color: var(--color-neutral-very-dark-blue);
+}
+
+.submit-button {
+  background-color: var(--color-primary-orange);
+  padding: 1.2rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: var(--color-neutral-white);
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  background-color: var(--color-neutral-white);
+  color: var(--color-neutral-very-dark-blue);
+}
+
+/* Thanks Card */
+
+.thanks-card {
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.atm-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.atm-img {
+  width: 15rem;
+}
+
+.thanks-card div:first-child p {
+  color: var(--color-primary-orange);
+  padding: 1.2rem 2rem;
+  background-color: hsla(217, 12%, 63%, 0.1);
+  border-radius: 3rem;
+  font-weight: var(--font-weight-regular);
+}
+
+.thanks-card div:last-child p:first-child {
+  font-size: 2.6rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem;
+}
+
+.thanks-card div:last-child p:last-child {
+  color: var(--color-neutral-light-grey);
+  line-height: 1.5;
+  font-weight: var(--font-weight-regular);
+}
+
+@media (max-width: 420px) {
+  body {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    padding: 2rem;
+    border-radius: 1.6rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .star-container {
+    padding: 1rem 1.3rem;
+  }
+
+  .star-svg-icon {
+    width: 1.2rem;
+  }
+
+  .rating-number {
+    padding: 1.2rem 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .submit-button {
+    padding: 1rem 1.3rem;
+  }
+
+  .atm-img {
+    width: 10rem;
+    margin: 0 auto;
+  }
+
+  .thanks-card div:first-child p {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  .thanks-card div:last-child p:first-child {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .thanks-card div:last-child p:last-child {
+    color: var(--color-neutral-light-grey);
+    line-height: 1.5;
+    font-size: 1.22rem;
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 1.5rem;
+  }
+}
